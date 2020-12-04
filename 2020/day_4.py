@@ -21,17 +21,14 @@ def valid_passports(passports: list, check_values: bool) -> int:
 def valid_attribute(attr_key: str, attr_value: str) -> bool:
     """Check if given attribute has correct value"""
     if attr_key == "byr":
-        if not attr_value.isnumeric():
-            return False
-        return len(attr_value) == 4 and 1920 <= int(attr_value) <= 2002
+        return (attr_value.isnumeric() and len(attr_value) == 4
+                and 1920 <= int(attr_value) <= 2002)
     elif attr_key == "iyr":
-        if not attr_value.isnumeric():
-            return False
-        return len(attr_value) == 4 and 2010 <= int(attr_value) <= 2020
+        return (attr_value.isnumeric() and len(attr_value) == 4
+                and 2010 <= int(attr_value) <= 2020)
     elif attr_key == "eyr":
-        if not attr_value.isnumeric():
-            return False
-        return len(attr_value) == 4 and 2020 <= int(attr_value) <= 2030
+        return (attr_value.isnumeric() and len(attr_value) == 4
+                and 2020 <= int(attr_value) <= 2030)
     elif attr_key == "hgt":
         match = re.fullmatch(r"(\d+)(cm|in)", attr_value)
         if match:
