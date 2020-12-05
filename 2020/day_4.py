@@ -1,4 +1,5 @@
 import re
+import os
 
 
 def valid_passports(passports: list, check_values: bool) -> int:
@@ -50,7 +51,7 @@ def valid_attribute(attr_key: str, attr_value: str) -> bool:
 def read_file(file_name: str) -> list:
     passports = []
     index = 0
-    with open(file_name, "r") as f:
+    with open(os.path.join(os.path.dirname(__file__), file_name), "r") as f:
         for line in f:
             if not line.strip():
                 index += 1

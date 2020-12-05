@@ -1,4 +1,5 @@
 import functools
+import os
 
 
 def num_of_trees(map_data: list) -> tuple:
@@ -17,7 +18,8 @@ def num_of_trees(map_data: list) -> tuple:
 
 
 def read_file(file_name: str) -> list:
-    return [line[:-1] for line in open(file_name, "r")]
+    return [line[:-1] for line in
+            open(os.path.join(os.path.dirname(__file__), file_name), "r")]
 
 
 def test():
