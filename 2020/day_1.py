@@ -1,3 +1,6 @@
+import os
+
+
 def part1(numbers: list, input_sum: int) -> int:
     """Return product of two numbers in <numbers> that sum to <input_sum>"""
     numbers_set = set(numbers)
@@ -16,7 +19,8 @@ def part2(numbers: list, input_sum: int) -> int:
 
 
 def read_file(file_name: str) -> list:
-    return [int(line) for line in open(file_name, "r")]
+    return [int(line) for line in
+            open(os.path.join(os.path.dirname(__file__), file_name), "r")]
 
 
 def test():
