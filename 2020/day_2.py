@@ -1,7 +1,7 @@
 import os
+from typing import Tuple
 
-
-def passwords_count(passwords: tuple) -> tuple:
+def passwords_count(passwords: tuple) -> Tuple[int, int]:
     """Return number of good passwords for 1st and 2nd part"""
     count_old, count_new = 0, 0
     for data in passwords:
