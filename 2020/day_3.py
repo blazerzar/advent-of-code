@@ -1,8 +1,9 @@
 import functools
 import os
+from typing import Tuple
 
 
-def num_of_trees(map_data: list) -> tuple:
+def num_of_trees(map_data: list) -> Tuple[int, int]:
     """Return number of trees in one direction and in all multiplied"""
     counts = [0] * 5
     offsets = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
