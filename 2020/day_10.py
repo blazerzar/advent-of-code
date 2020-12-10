@@ -17,7 +17,7 @@ def joltage_differences(adapters: List[int]) -> int:
 
 
 def adapters_arrangements(adapters: List[int]) -> int:
-    """Return number of valid arangements for given adapters"""
+    """Return number of valid arrangements for given adapters"""
     adapters_dict = {key: [x for x in adapters[i:i + 3] if x - key <= 3]
                      for i, key in enumerate([0] + adapters)}
     return adapters_rec(adapters_dict, 0, adapters[-1], {adapters[-1]: 1})
@@ -33,6 +33,17 @@ def adapters_rec(adapters: dict, prev: int, last: int, memo: dict) -> int:
         count += adapters_rec(adapters, next, last, memo)
     memo[prev] = count
     return count
+
+
+def adapters_dynamic(adapters: List[int]) -> int:
+    """Dynamic programming approach for second part"""
+    results = dict()
+    for i, a in enumerate(adapters):
+        # Find possible previous adapters
+        prev = [x for j, x in enumerate(
+            adapters[i::-1]) if 0 < j <= 3 and a - x <= 3]
+        results[a] = sum([results[j] for j in prev]) + int(a <= 3)
+    return results[adapters[-1]]
 
 
 def read_file(file_name: str) -> List[int]:
@@ -54,6 +65,7 @@ def main():
     adapters = read_file("inputs/input10.txt")
     print(joltage_differences(adapters))
     print(adapters_arrangements(adapters))
+    print(adapters_dynamic(adapters))
 
 
 if __name__ == "__main__":
