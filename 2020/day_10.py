@@ -20,17 +20,17 @@ def adapters_arrangements(adapters: List[int]) -> int:
     """Return number of valid arrangements for given adapters"""
     adapters_dict = {key: [x for x in adapters[i:i + 3] if x - key <= 3]
                      for i, key in enumerate([0] + adapters)}
-    return adapters_rec(adapters_dict, 0, adapters[-1], {adapters[-1]: 1})
+    return adapters_rec(adapters_dict, 0, {adapters[-1]: 1})
 
 
-def adapters_rec(adapters: dict, prev: int, last: int, memo: dict) -> int:
+def adapters_rec(adapters: dict, prev: int, memo: dict) -> int:
     """Recursive function for calculating arragements"""
-    if prev in memo.keys():
+    if prev in memo:
         return memo[prev]
 
     count = 0
     for next in adapters[prev]:
-        count += adapters_rec(adapters, next, last, memo)
+        count += adapters_rec(adapters, next, memo)
     memo[prev] = count
     return count
 
