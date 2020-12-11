@@ -16,7 +16,6 @@ def first_num_no_sum(numbers: List[int], preamble: int) -> int:
             return num
         available.pop(0)
         available.append(num)
-    return 0
 
 
 def set_with_sum(numbers: List[int], num: int) -> int:
@@ -30,8 +29,8 @@ def set_with_sum(numbers: List[int], num: int) -> int:
         max_num = n1
         for n2 in numbers[i + 1:]:
             sum += n2
-            min_num = min(min_num, n2)
-            max_num = max(max_num, n2)
+            min_num = min_num if n2 > min_num else n2
+            max_num = max_num if n2 < max_num else n2
             if sum == num:
                 return min_num + max_num
             elif sum > num:
