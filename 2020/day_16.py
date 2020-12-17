@@ -27,7 +27,7 @@ def get_invalid_tickets(rules: List[Tuple[str, Set[int]]],
 
 def get_fields_order(rules: List[Tuple[str, Set[int]]],
                      tickets: List[Tuple[int, ...]]) -> Tuple[str, ...]:
-    """Return a tuple of orders fields"""
+    """Return a tuple of ordered fields"""
     possible_fields = []
     # Go through each field and determine possible fields
     for i in range(len(rules)):
