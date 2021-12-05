@@ -129,5 +129,4 @@ int main() {
     std::cout << last_score(data.first, data.second) << std::endl;
 
     return 0;
-
 }
