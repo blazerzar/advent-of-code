@@ -9,6 +9,7 @@ fn main() {
     match day {
         1 => solutions::day_01::solve(),
         2 => solutions::day_02::solve(),
+        3 => solutions::day_03::solve(),
         _ => panic!("Invalid day!"),
     }
 }

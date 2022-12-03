@@ -1,10 +1,13 @@
 # 🎄 Advent of Code
+
 This is a collection of Advent of Code problems solved using different programming languages for years:
+
 - [2020](2020): Python
 - [2021](2021): C++
-- [2022](2022): Rust
+- [2022](2022/src/solutions): Rust
 
 ## 📜 Results
+
 | Year | ⭐ Stars | Completed |
 |------|----------|-----------|
 | 2020 | 50       | ✔️         |
