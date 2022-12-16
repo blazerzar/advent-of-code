@@ -22,6 +22,7 @@ fn main() {
         13 => solutions::day_13::solve(),
         14 => solutions::day_14::solve(),
         15 => solutions::day_15::solve(),
+        16 => solutions::day_16::solve(),
         _ => panic!("Invalid day!"),
     }
 }
