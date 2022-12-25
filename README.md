@@ -12,5 +12,6 @@ This is a collection of Advent of Code problems solved using different programmi
 |------|----------|-----------|
 | 2020 | 50       | ✔️         |
 | 2021 | 50       | ✔️         |
+| 2022 | 50       | ✔️         |
 
 All problems and information about the project are available on the official site for [Advent of Code](https://adventofcode.com/).
