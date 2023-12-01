@@ -5,6 +5,7 @@ This is a collection of Advent of Code problems solved using different programmi
 - [2020](2020): Python
 - [2021](2021): C++
 - [2022](2022/src/solutions): Rust
+- [2023](2023/solutions): Go
 
 ## 📜 Results
 
