@@ -2,6 +2,7 @@ package main
 
 import (
 	"aoc-2023/solutions/day01"
+	"aoc-2023/solutions/day02"
 	"fmt"
 	"os"
 	"strconv"
@@ -10,6 +11,7 @@ import (
 var solutionFunctions = []func(){
 	nil,
 	day01.Solve,
+	day02.Solve,
 }
 
 func main() {
