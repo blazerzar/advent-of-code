@@ -7,6 +7,7 @@ import (
 	"aoc-2023/solutions/day04"
 	"aoc-2023/solutions/day05"
 	"aoc-2023/solutions/day06"
+	"aoc-2023/solutions/day07"
 	"fmt"
 	"os"
 	"strconv"
@@ -20,6 +21,7 @@ var solutionFunctions = []func(){
 	day04.Solve,
 	day05.Solve,
 	day06.Solve,
+	day07.Solve,
 }
 
 func main() {
