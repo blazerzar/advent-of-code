@@ -57,7 +57,7 @@ func readInput(path string) [][]int {
 func extrapolateForward(histories [][]int) int {
 	sum := 0
 	for _, history := range histories {
-		sum += predictNext(history)
+		sum += PredictNext(history)
 	}
 
 	return sum
@@ -92,15 +92,16 @@ func allZero(numbers []int) bool {
 	return true
 }
 
-// Predict next value in the history using differences between observed values.
-func predictNext(history []int) int {
+// PredictNext predicts the next value in the history using the differences
+// between the observed values.
+func PredictNext(history []int) int {
 	diffs := diff(history)
 
 	if allZero(diffs) {
 		return history[len(history)-1]
 	}
 
-	return history[len(history)-1] + predictNext(diffs)
+	return history[len(history)-1] + PredictNext(diffs)
 }
 
 // Predict previous value in the history analogous to predictNext.
@@ -111,5 +112,5 @@ func predictPrev(history []int) int {
 		history[i], history[j] = history[j], history[i]
 	}
 
-	return predictNext(history)
+	return PredictNext(history)
 }
