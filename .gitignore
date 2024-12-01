@@ -1,5 +1,7 @@
 __pycache__/
 venv/
 .vscode/
-**/bin/
-**/target/
+bin/
+target/
+build/
+.DS_Store
