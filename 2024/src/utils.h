@@ -3,12 +3,12 @@
 #define STR_(x) #x
 #define STR(x) STR_(x)
 
-#define assert_eq(expected, got) _Generic((expected), \
+#define assert_eq(a, b) _Generic((a), \
     int: assert_eq_i, \
     long: assert_eq_l, \
     long long: assert_eq_ll, \
     size_t: assert_eq_z \
-)(expected, got)
+)(a, b)
 
 static inline void assert_eq_i(int a, int b) {
     if (a != b) {
