@@ -5,3 +5,5 @@ bin/
 target/
 build/
 .DS_Store
+*.txt
+!*test*.txt
