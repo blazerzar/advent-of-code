@@ -82,30 +82,13 @@ void free_pages(Pages pages) {
     arrfree(pages.updates);
 }
 
-// Returns true if a should come before b in the ordering.
-bool before(size_t a, size_t b, bool ordering[GRID_SIZE][GRID_SIZE]) {
-    if (ordering[a][b]) {
-        return true;
-    } else if (ordering[b][a]) {
-        return false;
-    }
-
-    for (size_t i = 0; i < GRID_SIZE; ++i) {
-        if (ordering[a][i] && before(i, b, ordering)) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
 // Returns true if the update array is correctly ordered according to the
 // ordering rules.
 bool correctly_ordered(size_t *update, bool ordering[GRID_SIZE][GRID_SIZE]) {
     size_t len = arrlen(update);
     for (size_t i = 0; i < len - 1; ++i) {
         for (size_t j = i + 1; j < len; ++j) {
-            if (!before(update[i], update[j], ordering)) {
+            if (ordering[update[j]][update[i]]) {
                 return false;
             }
         }
@@ -147,7 +130,7 @@ IntThunk *create_thunks(size_t *update, bool ordering[GRID_SIZE][GRID_SIZE]) {
 int cmp_int_thunk(const void *a, const void *b) {
     IntThunk *ia = (IntThunk *) a;
     IntThunk *ib = (IntThunk *) b;
-    bool is_before = before(ia->value, ib->value, ia->ordering);
+    bool is_before = !ia->ordering[ib->value][ia->value];
     return is_before ? -1 : 1;
 }
 

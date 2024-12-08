@@ -68,7 +68,7 @@ Report *read_input(const char *filename) {
 }
 
 // A report is considered safe if the difference between two consecutive
-// levels is at most 2 and the levels are either all increasing or all
+// levels is at most 3 and the levels are either all increasing or all
 // decreasing.
 bool is_safe(Report report, size_t skip) {
     assert(report.length > 2);
